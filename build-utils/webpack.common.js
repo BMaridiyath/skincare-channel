@@ -48,6 +48,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      filename: "./index.html",
+      favicon: "./public/favicon.ico",
     }),
     new MiniCssExtractPlugin({
       filename: "widget.css",
