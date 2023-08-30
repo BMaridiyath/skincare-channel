@@ -4,14 +4,26 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-window.initWidget = (appParams) => {
-  const root = ReactDOM.createRoot(document.getElementById(appParams.rootID));
-  root.render(
-    <React.StrictMode>
-      <App events={appParams.events} region={appParams.region} />
-    </React.StrictMode>
-  );
-  reportWebVitals();
+// window.initWidget = (appParams) => {
+//   const root = ReactDOM.createRoot(document.getElementById(appParams.rootID));
+//   root.render(
+//     <React.StrictMode>
+//       <App events={appParams.events} region={appParams.region} />
+//     </React.StrictMode>
+//   );
+//   reportWebVitals();
+// };
+
+export default {
+  initWidget: (appParams) => {
+    const root = ReactDOM.createRoot(document.getElementById(appParams.rootID));
+    root.render(
+      <React.StrictMode>
+        <App events={appParams.events} region={appParams.region} />
+      </React.StrictMode>
+    );
+    reportWebVitals();
+  },
 };
 
 if (process.env.NODE_ENV !== "production") {
