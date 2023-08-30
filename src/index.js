@@ -22,16 +22,18 @@ export default {
         <App events={appParams.events} region={appParams.region} />
       </React.StrictMode>
     );
+
     reportWebVitals();
   },
 };
 
 if (process.env.NODE_ENV !== "production") {
-  window.codeBuilder = window.initWidget({
-    rootID: "root",
-    region: "EU-France",
-    events: {},
-  });
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <React.StrictMode>
+      <App events={{}} region={"EU-France"} />
+    </React.StrictMode>
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function
